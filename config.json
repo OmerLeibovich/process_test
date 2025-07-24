@@ -1,0 +1,16 @@
+{
+  "monitoring_interval": 5,
+  "monitoring_duration": 5,
+  "exclude_processes": ["System Idle Process", "System"],
+  "output_file": "processes.csv",
+  "delete_database_table": true,
+  "delete_csv_file": true,
+  "debug_mode": false,
+    "database": {
+    "host": "localhost",
+    "port": 5432,
+    "dbname": "omerBmc",
+    "user": "postgres",
+    "password": "a4468b32"
+  }
+}
