@@ -1,7 +1,20 @@
 import psycopg2
+from typing import List, Dict
+from Process import Process
 
-def insert(processes,db_config,delete):
+def insert(processes: List[Process], db_config: Dict[str, str], delete: bool) -> None:
+    """
+    Inserts summarized process data into a PostgreSQL database.
 
+    Args:
+        processes (List[Process]): A list of Process objects containing aggregated data.
+        db_config (Dict[str, str]): A dictionary containing DB connection parameters.
+            Expected keys: "dbname", "host", "user", "password", "port".
+        delete (bool): Whether to drop and recreate the `process_summary` table before inserting.
+
+    Raises:
+        psycopg2.DatabaseError: If any database operation fails.
+    """
     conn = psycopg2.connect(
         database=db_config["dbname"],
         host=db_config["host"],

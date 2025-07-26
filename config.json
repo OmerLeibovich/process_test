@@ -1,8 +1,9 @@
 {
   "monitoring_interval": 5,
-  "monitoring_duration": 5,
+  "monitoring_duration": 30,
   "exclude_processes": ["System Idle Process", "System"],
   "output_file": "processes.csv",
+  "logging_output_file": "log.csv",
   "delete_database_table": true,
   "delete_csv_file": true,
   "debug_mode": false,
